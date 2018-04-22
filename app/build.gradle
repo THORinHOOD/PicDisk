@@ -1,0 +1,35 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "catwithbowtie.picdisk"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        manifestPlaceholders = [YANDEX_CLIENT_ID:"a15a0bda40564796bccb11497a3c38ae"]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support:cardview-v7:26.+'
+    compile 'com.android.support:design:26.+'
+    compile 'com.android.support:recyclerview-v7:26.+'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.yandex.android:disk-restapi-sdk:1.03'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.yandex.android:authsdk:2.0.0'
+    compile 'it.sephiroth.android.library.imagezoom:imagezoom:+'
+}
